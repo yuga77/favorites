@@ -12,6 +12,43 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+# favorites DB設計
+## usersテーブル
+|column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|name|string|null:false|
+### Association
+- has_many :genres
+- has_many :comments
+
+## genresテーブル
+|column|Type|Options|
+|------|----|-------|
+|text|text|null:false|
+|user_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :contents
+
+## contentsテーブル
+|column|Type|Options|
+|------|----|-------|
+|title|text|null: false|
+### Association
+- belongs_to :genre
+- belongs_to :comment
+
+### commentsテーブル
+|column|Type|Options|
+|------|----|-------|
+|text|text|null:false|
+|user_id|references|null:false, foreign_key: true|
+|content_id|references|null:false, foreign_key: true|
+### Association
+belogns_to :user
+belongs_to :content
 
 * Database initialization
 
