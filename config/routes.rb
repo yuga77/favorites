@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'homes#index'
   devise_for :users
-  root 'genres#home'
+  resources :users, only: [:edit, :update]
 end
