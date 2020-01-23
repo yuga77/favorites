@@ -1,0 +1,42 @@
+.wrapper{
+  .genres{
+    width: 100%;
+    height: calc(100vh - 150px);
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    background-image: url(img-3056.jpg);
+    background-size: 100% 100%;
+    background-color: rgba(255,255,255,0.5);
+    background-blend-mode: lighten;
+    padding: 50px;
+    .book{
+      color: black;
+      background-image: url(img-3058.jpg);
+      background-size: 100% 100%;
+      height: 40%;
+      width: 35%;
+    }
+    .music{
+      color: black;
+      background-image: url(img-3057.jpg);
+      background-size: 100% 100%;
+      height: 40%;
+      width: 35%;
+    }
+    .movie{
+      color: black;
+      background-image: url(img-3059.jpg);
+      background-size: 100% 100%;
+      height: 40%;
+      width: 35%;
+    }
+    .youtube{
+      color: black;
+      background-image: url(img-3060.jpg);
+      background-size: 100% 100%;
+      height: 40%;
+      width: 35%; 
+    }
+  }
+}
