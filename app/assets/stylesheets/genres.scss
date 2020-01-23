@@ -2,8 +2,6 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  height: 100%;
-  width: 100%;
 }
 
 .wrapper {
@@ -44,7 +42,7 @@
 
   .main{
     width: 100%;
-    height: calc(100% - 150px);
+    height: calc(100vh - 150px);
     background-color: blanchedalmond;
     display: flex;
     flex-direction: column;
@@ -81,7 +79,7 @@
 
     .about{
       background-color: brown;
-      height: calc(100% / 2);
+      height: calc(100vh / 2);
       display: flex;
 
       &__new-favorites{
