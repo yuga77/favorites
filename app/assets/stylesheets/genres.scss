@@ -18,23 +18,33 @@ body{
     background-blend-mode: lighten;
 
     &__name{
+      a{
       font-size: 50px;
       height: 80%;
       line-height: 130px;
       font-family: cursive;
       color: greenyellow;
+      }
     }
 
     &__right-box{
       display: flex;
-      width: 200px;
-      line-height: 150px;
+      width: 300px;
+      line-height: 130px;
+      a{
+        color: black;
+      }
+
       &__new{
-        color: #000;
+        a{
+        padding-left: 50px;
+        }
       }
 
       &__login{
-        color: #000;
+        a{
+        padding-left: 50px;
+        }
       }
     }
   }
