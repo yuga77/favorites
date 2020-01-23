@@ -1,8 +1,3 @@
-.header
-  .header__name favorites
-  .header__right-box
-    .header__right-box__new 新規登録
-    .header__right-box__login ログイン
 .main
   .intro
     .copy 
@@ -10,6 +5,9 @@
     .text
       %p favoritesは、お気に入りの音楽や本などを保存できるサイトです。懐かしのあの曲も、昔読んだあの本もいつでも振り返ることのできる場所を提供します。
   .about
-    .new-favorites my favorites作成
-    .other-favorites 他の人のfavorites
+    .new-favorites
+      %strong my favorites作成
+      =link_to "ジャンルを選択",'#'
+    .other-favorites 
+      %strong 他の人のfavoritesを見る
 %footer
