@@ -11,8 +11,10 @@
       .header__name
         =link_to "favorites", root_path
       .header__right-box
-        .header__right__box__user 
-          =link_to "yuga","#"
+        .header__right__box__user
+        -if user_signed_in?
+          =link_to "#{current_user.name}","edit_user_path(current_user)"
+        -else
         .header__right-box__new
           =link_to "新規登録", new_user_registration_path
         .header__right-box__login
