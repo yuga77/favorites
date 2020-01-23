@@ -7,4 +7,9 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .header
+      .header__name favorites
+      .header__right-box
+        .header__right-box__new 新規登録
+        .header__right-box__login ログイン
     = yield
