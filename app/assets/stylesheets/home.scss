@@ -73,15 +73,10 @@
 
 
 .wrapper {
-  footer{
-    background-color: gray;
-    height: 50px;
-    bottom: 0;
-  }
 
   .main{
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 120px);
     background-color: blanchedalmond;
     display: flex;
     flex-direction: column;
@@ -92,8 +87,7 @@
 
     .intro{
       height: calc(100% / 2);
-      padding: 50px 50px;
-      
+      padding: 130px 50px 40px;      
       .copy{
         padding-top: 10px;
         height: 50%;

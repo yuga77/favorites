@@ -1,0 +1,18 @@
+.contents
+  .form
+    = form_for [@genre, @content] do |f|
+      = f.text_field :title, class: 'form__content', placeholder: '追加したいタイトル名を入力'
+      .form__mask
+      = f.submit 'Send', class: 'form__submit'
+      %ul.uk-list.uk-list-striped
+        %li.list
+          aaa
+        %li.list
+          bbb
+        %li.list
+          ccc
+        %li.list
+          aaa
+        %li.list
+          bbb
+        

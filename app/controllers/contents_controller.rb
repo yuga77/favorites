@@ -1,6 +1,8 @@
 class ContentsController < ApplicationController
+  before_action :set_genre
+  
   def index
-    @content = @Content.new
+    @content = Content.new
     @contents = @genre.contents.includes(:user)
   end
 
@@ -18,5 +20,9 @@ class ContentsController < ApplicationController
 
   def content_params
     params.require(:content).permit(:title)
+  end
+
+  def set_genre
+    @genre = Genre.find(params[:genre_id])
   end
 end
