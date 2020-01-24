@@ -4,15 +4,7 @@
       = f.text_field :title, class: 'form__content', placeholder: '追加したいタイトル名を入力'
       .form__mask
       = f.submit 'Send', class: 'form__submit'
-      %ul.uk-list.uk-list-striped
+    %ul.uk-list.uk-list-striped
+      - @contents.each do |content| 
         %li.list
-          aaa
-        %li.list
-          bbb
-        %li.list
-          ccc
-        %li.list
-          aaa
-        %li.list
-          bbb
-        
+          = link_to content.title, genre_content_path(@genre.id, content.id)

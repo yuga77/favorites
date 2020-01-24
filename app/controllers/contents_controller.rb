@@ -3,17 +3,21 @@ class ContentsController < ApplicationController
   
   def index
     @content = Content.new
-    @contents = @genre.contents.includes(:user)
+    @contents = @genre.contents
   end
 
   def create
     @content = @genre.contents.new(content_params)
     if @content.save
-      redirect_to genres_contents_path(@genre)
+      redirect_to genre_contents_path(@genre)
     else
-      @contents = @genre.contents.includes(:user)
+      @contents = @genre.contents
       render :index
     end
+  end
+
+  def show
+    @content = Content.find(params[:id])
   end
 
   private
