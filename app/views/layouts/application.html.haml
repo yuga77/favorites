@@ -10,13 +10,13 @@
     .header
       .header__name
         =link_to "favorites", root_path
-      .header__right-box
-        .header__right__box__user
-        -if user_signed_in?
-          =link_to "#{current_user.name}","edit_user_path(current_user)"
-        -else
-        .header__right-box__new
-          =link_to "新規登録", new_user_registration_path
-        .header__right-box__login
-          =link_to "ログイン", new_user_session_path
+        .header__right-box
+          - if user_signed_in?
+            .header__right__box__user
+              =link_to "#{current_user.name}",edit_user_path(current_user)
+          -else
+            .header__right-box__new
+              =link_to "新規登録", new_user_registration_path
+            .header__right-box__login
+              =link_to "ログイン", new_user_session_path
     = yield
