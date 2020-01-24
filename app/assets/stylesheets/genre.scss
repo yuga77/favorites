@@ -11,10 +11,12 @@
     background-blend-mode: lighten;
     padding: 50px;
     position: relative;
-    p {
-      font-size: 80px;
+    a {
+      font-size: 60px;
       line-height: 200px;
-      text-align: center;     
+      margin: 0 auto;
+      display: block;
+      text-align: center;
       color: #FF8856;
       }
     .book{
