@@ -8,3 +8,4 @@
       - @contents.each do |content| 
         %li.list
           = link_to content.title, genre_content_path(@genre.id, content.id)
+    = paginate(@contents)

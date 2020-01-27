@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
   
   def index
     @content = Content.new
-    @contents = @genre.contents
+    @contents = @genre.contents.order("created_at DESC").page(params[:page]).per(9)
   end
 
   def create
