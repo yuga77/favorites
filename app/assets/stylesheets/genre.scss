@@ -27,6 +27,9 @@
       position: absolute;
       top: 105px;
       left: 130px;
+      display: inline-block;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
     }
     .music{
       color: black;
@@ -37,6 +40,9 @@
       position: absolute;
       top: 105px;
       right: 130px;
+      display: inline-block;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
     }
     .movie{
       color: black;
@@ -47,6 +53,9 @@
       position: absolute;
       bottom: 105px;
       left: 130px;
+      display: inline-block;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
     }
     .youtube{
       color: black;
@@ -57,6 +66,9 @@
       position: absolute;
       bottom: 105px;
       right: 130px;
+      display: inline-block;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
     }
   }
 }
