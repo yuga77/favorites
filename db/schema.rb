@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200127034327) do
+ActiveRecord::Schema.define(version: 20200127073731) do
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "genre_id"
     t.text     "title",      limit: 65535, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.text     "detail",     limit: 65535, null: false
-    t.text     "image",      limit: 65535
-    t.text     "text",       limit: 65535
+  end
+
+  create_table "details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "detail"
+    t.string   "image"
+    t.string   "text"
+    t.integer  "genre_id"
+    t.integer  "content_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["content_id"], name: "index_details_on_content_id", using: :btree
+    t.index ["genre_id"], name: "index_details_on_genre_id", using: :btree
   end
 
   create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,4 +51,6 @@ ActiveRecord::Schema.define(version: 20200127034327) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "details", "contents"
+  add_foreign_key "details", "genres"
 end

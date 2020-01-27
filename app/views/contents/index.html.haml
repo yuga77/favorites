@@ -7,5 +7,5 @@
     %ul.uk-list.uk-list-striped
       - @contents.each do |content| 
         %li.list
-          = link_to content.title, genre_content_path(@genre.id, content.id)
+          = link_to content.title, genre_content_details_path(@genre.id, content.id)
     = paginate(@contents)

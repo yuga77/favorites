@@ -1,0 +1,23 @@
+.details-main
+  .details-header
+    .details-header__name
+      = @content.title
+    .details-header__form
+      = form_for [@content, @detail] do |f|
+        .input-box__top
+          = f.text_field :detail, class: 'input-box__top__detail', placeholder: '詳細を入力してください'
+          = f.label :image, class: 'input-box__top__image' do
+            = icon('fas','image')
+            = f.file_field :image, class: 'input-box__top__image__file'
+        .input-box__bottom
+          = f.text_field :text, class: 'input-box__bottom__text', placeholder: 'このfavoriteに一言'
+        = f.submit 'Send', class: 'input-box__bottom__send-btn'
+
+  %ul.main
+    %li.detail
+      .detail_name
+        =@detail.detail
+      .detail_image
+        =@detail.image
+      .detail_text
+        =@detail.text

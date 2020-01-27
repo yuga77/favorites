@@ -9,13 +9,13 @@ class ContentsController < ApplicationController
   def create
     @content = @genre.contents.new(content_params)
     if @content.save
-      redirect_to genre_contents_path(@genre)
+      redirect_to genre_contents_path(@genre,@content)
     else
       @contents = @genre.contents
       render :index
     end
   end
-
+  
   def show
     @content = Content.find(params[:id])
   end
