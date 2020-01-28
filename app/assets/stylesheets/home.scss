@@ -130,20 +130,17 @@
           color: black;
         }
       }
-      .other-favorites{
+      .create-favorites{
         font-size: 30px;
         text-align: center;
         strong{
-        display: block;
-        color: #000;
-        font-size: 30px;
-        margin-bottom: 20px;
-        border-bottom: double 5px #FFC778;
+          color: #000;
+          display: block;
+          margin-bottom: 20px;
+          border-bottom: double 5px #FFC778;
         }
         a{
           color: black;
-          display: block;
-
         }
       }
     }  

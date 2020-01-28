@@ -14,12 +14,12 @@
     justify-content: space-between;
     &__name{
       border-bottom: solid 3px white;
-      font-size: 120px;
+      font-size: 80px;
       color: white;
-      width: 30%;
+      width: 40%;
       font-style: oblique;
       text-align: center;
-      line-height: 45px;
+      line-height: 80px;
     }
 
     &__form{
@@ -89,9 +89,11 @@
       margin: 0px 45px 30px 15px;
 
       .detail_name{
-        line-height: 50px;
+        line-height: 20px;
         height: 50%;
         width: 50%;
+        padding-top: 20px;
+        font-size: 12px;
         float: left;
         text-align: center;
         color: yellow;
@@ -111,7 +113,7 @@
 
       .detail_text{
         bottom: 5px;
-        padding-top: 10px;
+        padding-top: 30px;
         height: 50%;
         color: #364e96;
         width: 50%;

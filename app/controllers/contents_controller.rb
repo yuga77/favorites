@@ -9,7 +9,10 @@ class ContentsController < ApplicationController
   def create
     @content = @genre.contents.new(content_params)
     if @content.save
-      redirect_to genre_contents_path(@genre,@content)
+      respond_to do |format|
+        format.html { redirect_to genre_contents_path(@genre,@content)}
+        format.json { render json: @content}
+      end
     else
       @contents = @genre.contents
       render :index
