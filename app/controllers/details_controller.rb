@@ -5,15 +5,24 @@ class DetailsController < ApplicationController
   
   def index
     @detail = Detail.new
-    @details = @content.details
+    @details = @content.details.includes(:genre, :content).order("created_at DESC").page(params[:page]).per(12)
   end
 
   def create
     @detail = @content.details.new(detail_params)
+    puts
+    puts
+    puts @detail.detail
+    puts @detail.content.id
+    puts @detail.text
+    puts @detail.valid?
+    puts @detail.errors.full_messages
+    puts
+
     if @detail.save
       redirect_to  genre_content_details_path(@genre,@content)
     else
-      @detail = @content.details
+      @details = @content.details
       render :index
     end
   end
@@ -21,7 +30,7 @@ class DetailsController < ApplicationController
   private
 
   def detail_params
-    params.require(:detail).permit(accepts_nested_attributes_for: [:detail, :image, :text])
+    params.require(:detail).permit(:detail, :image, :text).merge(genre_id: @genre.id)
   end
 
   def set_genre

@@ -3,7 +3,7 @@
     .details-header__name
       = @content.title
     .details-header__form
-      = form_for [@content, @detail] do |f|
+      = form_for [@genre, @content, @detail] do |f|
         .input-box__top
           = f.text_field :detail, class: 'input-box__top__detail', placeholder: '詳細を入力してください'
           = f.label :image, class: 'input-box__top__image' do
@@ -14,10 +14,12 @@
         = f.submit 'Send', class: 'input-box__bottom__send-btn'
 
   %ul.main
-    %li.detail
-      .detail_name
-        =@detail.detail
-      .detail_image
-        =@detail.image
-      .detail_text
-        =@detail.text
+    - @details.each do |detail|
+      %li.detail
+        %strong.detail_name
+          =detail.detail
+        .detail_image
+          =image_tag detail.image.url
+        %p.detail_text
+          =detail.text
+    = paginate(@details)

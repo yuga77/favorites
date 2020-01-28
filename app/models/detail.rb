@@ -4,4 +4,5 @@ class Detail < ApplicationRecord
 
   validates :detail, presence: true
   mount_uploader :image, ImageUploader
+
 end
