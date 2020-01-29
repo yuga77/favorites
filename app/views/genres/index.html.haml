@@ -1,2 +1,10 @@
 .wrapper
-  = render "main"
+  .genres
+    .book
+      =link_to "BOOK", genre_contents_path(genre_id: 1)
+    .music 
+      =link_to "MUSIC",genre_contents_path(genre_id: 2)
+    .movie 
+      =link_to "MOVIE",genre_contents_path(genre_id: 3)
+    .youtube 
+      =link_to "YOUTUBE",genre_contents_path(genre_id: 4)

@@ -5,9 +5,10 @@
     .text
       %p favoritesは、お気に入りの音楽や本などを保存できるサイトです。懐かしのあの曲も、昔読んだあの本もいつでも振り返ることのできる場所を提供します。
   .about
-    .new-favorites
-      %strong my favorites作成
-      =link_to "ジャンルを選択",'#'
-    .other-favorites 
-      %strong 他の人のfavoritesを見る
-%footer
+    - if user_signed_in?
+      .new-favorites
+        %strong my favorites作成
+        =link_to "ジャンルを選択", genres_path
+    - else
+      .create-favorites
+        %strong my favorites作成にはログインが必要です。

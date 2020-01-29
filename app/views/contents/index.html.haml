@@ -1,0 +1,15 @@
+.contents
+  .form
+    = form_for [@genre, @content] do |f|
+      = f.text_field :title, class: 'form__content', placeholder: '追加したいタイトル名を入力', autocomplete: 'off'
+      .form__mask
+      = f.submit 'Send', class: 'form__submit'
+    %ul.uk-list.uk-list-striped
+      - @contents.each do |content| 
+        -if user_signed_in? && current_user.id == content.user_id
+          %li.list
+            = link_to content.title, genre_content_details_path(@genre.id, content.id)
+            .content-destroy
+              = link_to genre_content_path(@genre.id, content.id), method: :delete, data: { confirm: '本当に消しますか?' } do
+                = icon('far','times-circle')
+    = paginate(@contents)

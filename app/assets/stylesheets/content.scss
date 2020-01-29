@@ -1,0 +1,74 @@
+.contents{
+  height: 100%;
+  width: 100%;
+
+  .form{
+    width: 100%;
+    height: 200px;
+    padding-top: 40px;
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-image: url(img-3061.jpg);
+    background-size: 100% 100%;
+    background-color: rgba(255,255,255,0.5);
+    background-blend-mode: lighten;
+
+    #new_content{
+      margin: 0 auto;
+      width: 60%;
+      text-align: center;
+
+      .form__content{
+        height: 50px;
+        width: 50%;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    
+    &__submit{
+      width: 30%;
+    }
+
+    .uk-list.uk-list-striped{
+      list-style: none;
+      width: 25%;
+      margin: 0 auto;
+      padding-top: 30px;
+      text-align: center;
+      overflow: scroll;
+      .list{
+        font-size: 5px;
+        height: 50px;
+        position: relative;
+        a{
+          font-size:5em;
+          text-align:center;
+          line-height:0.95em;
+          color: #A5D6A7;
+          text-shadow: 
+            0.04em 0.02em 0 #B0BEC5, 
+            0.08em 0.05em 0 rgba(0, 0, 0, 0.6);
+        }
+        .content-destroy{
+          font-size: 2px;
+          position: absolute;
+          right: 0;
+          top: 17px;
+          padding-left: 10px;
+
+          a{
+            color: black;
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+    .pagination{
+      font-size: 40px;
+      text-align: center;
+      padding-top: 20px;
+    }
+  }
+}
