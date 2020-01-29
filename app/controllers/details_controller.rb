@@ -10,19 +10,14 @@ class DetailsController < ApplicationController
 
   def create
     @detail = @content.details.new(detail_params)
-    puts
-    puts
-    puts @detail.detail
-    puts @detail.content.id
-    puts @detail.text
-    puts @detail.valid?
-    puts @detail.errors.full_messages
-    puts
-
     if @detail.save
-      redirect_to  genre_content_details_path(@genre,@content)
+      respond_to do |format|
+        format.html {redirect_to  genre_content_details_path(@genre,@content)}
+        format.json
+      end
     else
-      @details = @content.details
+      @details = @content.details.includes(:genre, :content)
+      flash.now[:alert] = '詳細を入力してください。'
       render :index
     end
   end
@@ -36,7 +31,7 @@ class DetailsController < ApplicationController
   private
 
   def detail_params
-    params.require(:detail).permit(:detail, :image, :text).merge(genre_id: @genre.id)
+    params.require(:detail).permit(:detail, :image, :text).merge(genre_id: @genre.id, content_id: @content.id, user_id: current_user.id)
   end
 
   def set_genre

@@ -14,7 +14,8 @@ class ContentsController < ApplicationController
         format.json { render json: @content}
       end
     else
-      @contents = @genre.contents
+      @contents = @genre.contents.includes(:genre)
+      flash.now[:alert] = 'タイトルを入力してください。'
       render :index
     end
   end
@@ -32,7 +33,7 @@ class ContentsController < ApplicationController
   private
 
   def content_params
-    params.require(:content).permit(:title)
+    params.require(:content).permit(:title).merge(user_id: current_user.id)
   end
 
   def set_genre

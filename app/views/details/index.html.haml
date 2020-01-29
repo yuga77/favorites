@@ -12,17 +12,20 @@
         .input-box__bottom
           = f.text_field :text, class: 'input-box__bottom__text', placeholder: 'このfavoriteに一言',autocomplete: 'off'
         = f.submit 'Send', class: 'input-box__bottom__send-btn'
-
   %ul.main
     - @details.each do |detail|
-      %li.detail
-        %strong.detail_name
-          =detail.detail
-        .detail_image
-          =image_tag detail.image.url
-        %p.detail_text
-          =detail.text
-        .detail_destroy
-          = link_to genre_content_detail_path(@genre,@content, detail), method: :delete, data: { confirm: '本当に消しますか?' } do
-            = icon('far','times-circle')
+      -if user_signed_in? && current_user.id == detail.user_id
+        %li.detail
+          %strong.detail_name
+            =detail.detail
+          .detail_image
+            -if detail.image.blank?
+              %img(src="/assets/default-565b88a8c2fade1693a3bcaf71d4ec98c88c56b1a1ec7d2d725880225333d61b.jpg" alt="Default")
+            -else
+              =image_tag detail.image_url
+          %p.detail_text
+            =detail.text
+          .detail_destroy
+            = link_to genre_content_detail_path(@genre,@content, detail), method: :delete, data: { confirm: '本当に消しますか?' } do
+              = icon('far','times-circle')
     = paginate(@details)
