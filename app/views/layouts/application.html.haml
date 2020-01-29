@@ -12,6 +12,8 @@
         =link_to "favorites", root_path
         .header__right-box
           - if user_signed_in?
+            .header__right__box__back
+              =link_to "Back", onclick="javascript:history.back();"
             .header__right__box__user
               =link_to "#{current_user.name}",edit_user_path(current_user)
           -else

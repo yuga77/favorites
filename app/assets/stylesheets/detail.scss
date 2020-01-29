@@ -121,6 +121,18 @@
         position: absolute;
         text-align: center;
       }
+
+      .detail_destroy{
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 13px;
+
+        a{
+          color: white;
+        }
+      }
+
     }
   }
   .pagination{

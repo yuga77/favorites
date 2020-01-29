@@ -18,6 +18,12 @@ class ContentsController < ApplicationController
       render :index
     end
   end
+
+  def destroy
+    content = Content.find(params[:id])
+    content.destroy
+    redirect_to genre_contents_path(@genre,@content)
+  end
   
   def show
     @content = Content.find(params[:id])

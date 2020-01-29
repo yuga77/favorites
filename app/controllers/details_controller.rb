@@ -27,6 +27,12 @@ class DetailsController < ApplicationController
     end
   end
 
+  def destroy
+    detail = Detail.find(params[:id])
+    detail.destroy
+    redirect_to  genre_content_details_path(@genre,@content)
+  end
+
   private
 
   def detail_params

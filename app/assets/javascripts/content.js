@@ -4,6 +4,11 @@ $(function() {
                   <a href=/genres/${content.genre_id}/contents/${content.id}/details>
                     ${content.title}
                   </a>
+                  <div class="content-destroy">
+                    <a data-confirm="本当に消しますか?" rel="nofollow" data-method="delete" href=/genres/${content.genre_id}/contents/${content.id}>
+                      <i class="far fa-times-circle">
+                      </i>
+                    </a>
                 </li>`
     return html;
   }
