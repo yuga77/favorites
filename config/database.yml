@@ -51,4 +51,17 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
+  timeout: 5000
   pool: 5
+
+development:
+  <<: *default
+  database: favorites_development
+
+test:
+  <<: *default
+  database: favorites_test
+
+production:
+  <<: *default
+  database: favorites_production
