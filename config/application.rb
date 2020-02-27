@@ -14,6 +14,6 @@ module Favorites
       g.helper false
       g.test_framework false
     end
+    config.assets.initialize_on_precompile = false
   end
-  config.assets.initialize_on_precompile = false
 end
