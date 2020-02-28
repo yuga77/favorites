@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200129101819) do
+ActiveRecord::Schema.define(version: 20200228053538) do
 
   create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "genre_id"
@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 20200129101819) do
   end
 
   create_table "details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "detail"
+    t.text     "detail",     limit: 65535, null: false
     t.string   "image"
     t.string   "text"
     t.integer  "genre_id"
     t.integer  "content_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "user_id"
     t.index ["content_id"], name: "index_details_on_content_id", using: :btree
     t.index ["genre_id"], name: "index_details_on_genre_id", using: :btree
