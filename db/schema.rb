@@ -17,18 +17,21 @@ ActiveRecord::Schema.define(version: 20200129101819) do
     t.text     "title",      limit: 65535, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.text     "detail",     limit: 65535, null: false
+    t.text     "image",      limit: 65535
+    t.text     "text",       limit: 65535
     t.integer  "user_id"
     t.index ["user_id"], name: "index_contents_on_user_id", using: :btree
   end
 
   create_table "details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "detail",     limit: 65535, null: false
+    t.string   "detail"
     t.string   "image"
     t.string   "text"
     t.integer  "genre_id"
     t.integer  "content_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.index ["content_id"], name: "index_details_on_content_id", using: :btree
     t.index ["genre_id"], name: "index_details_on_genre_id", using: :btree
@@ -39,11 +42,6 @@ ActiveRecord::Schema.define(version: 20200129101819) do
     t.text     "title",      limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-  end
-
-  create_table "homes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
